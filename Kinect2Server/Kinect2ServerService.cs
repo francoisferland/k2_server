@@ -127,8 +127,11 @@ namespace PersonalRobotics.Kinect2Server
 
             // Create an array of face sources/readers for each possible body.
             // These will be activated on demand as the corresponding bodies are tracked.
-            this.faceSources = new HighDefinitionFaceFrameSource[this.kinect.BodyFrameSource.BodyCount];
-            this.faceReaders = new HighDefinitionFaceFrameReader[this.kinect.BodyFrameSource.BodyCount];
+            // NOTE: Temporarily disabled, crashes somehow on our setup:
+            // this.faceSources = new HighDefinitionFaceFrameSource[this.kinect.BodyFrameSource.BodyCount];
+            // this.faceReaders = new HighDefinitionFaceFrameReader[this.kinect.BodyFrameSource.BodyCount];
+            this.faceSources = new HighDefinitionFaceFrameSource[0];
+            this.faceReaders = new HighDefinitionFaceFrameReader[0];
 
             for (var i = 0; i < faceSources.Length; ++i)
             {
